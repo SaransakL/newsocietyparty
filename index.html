@@ -27,8 +27,15 @@
             box-sizing: border-box;
         }
 
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
         body {
             min-height: 100vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -37,8 +44,86 @@
             color: #000;
 
             font-family: "IBM Plex Sans Thai", sans-serif;
+
             overflow: hidden;
         }
+
+        /* =========================
+           LOADING SCREEN
+           ========================= */
+
+        .loader {
+            position: fixed;
+            inset: 0;
+
+            z-index: 9999;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #01ff00;
+
+            opacity: 1;
+            visibility: visible;
+
+            transition:
+                opacity 0.7s ease,
+                visibility 0.7s ease;
+        }
+
+        .loader.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* =========================
+           SPINNER
+           ========================= */
+
+        .spinner-animation {
+            opacity: 0;
+
+            transform: scale(0.5);
+
+            transition:
+                opacity 0.4s ease,
+                transform 0.4s ease;
+        }
+
+        .spinner-animation.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .spinner-animation.hide {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        .spinner {
+            width: 55px;
+            height: 55px;
+
+            border: 5px solid rgba(0, 0, 0, 0.2);
+            border-top-color: #000;
+
+            border-radius: 50%;
+
+            animation:
+                spinnerRotate 0.5s linear infinite;
+        }
+
+        @keyframes spinnerRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* =========================
+           MAIN
+           ========================= */
 
         .coming-soon {
             width: 100%;
@@ -50,6 +135,7 @@
             justify-content: center;
 
             text-align: center;
+
             padding: 40px 24px;
         }
 
@@ -60,7 +146,23 @@
         .logo-wrap {
             margin-bottom: 35px;
 
-            animation: float 5s ease-in-out infinite;
+            opacity: 0;
+
+            animation:
+                logoEnter
+                0.9s
+                cubic-bezier(0.22, 1, 0.36, 1)
+                3.2s
+                forwards;
+        }
+
+        .logo-float {
+            animation:
+                float
+                5s
+                ease-in-out
+                4.1s
+                infinite;
         }
 
         .logo-wrap img {
@@ -69,147 +171,58 @@
 
             display: block;
 
-            transition: transform 0.5s ease;
+            transition:
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .logo-wrap:hover {
+        .logo-wrap:hover .logo-float {
             animation-play-state: paused;
         }
 
         .logo-wrap:hover img {
-            transform: scale(1.1) translateY(-10px);
+            transform:
+                scale(1.1)
+                rotate(-2deg);
         }
 
         /* =========================
-           TEXT
+           LOGO INTRO
            ========================= */
 
-        .coming-soon h1 {
-            font-size: 60px;
-            font-weight: 700;
-            line-height: 1.2;
+        @keyframes logoEnter {
 
-            margin: 0;
-        }
-
-        .bounce-text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .bounce-text span {
-            display: inline-block;
-
-            opacity: 0;
-
-            animation:
-                slideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-                letterBounce 5s ease-in-out infinite;
-        }
-
-        /* =========================
-           INTRO DELAY
-           เลื่อนเข้าจากซ้ายทีละตัว
-           ========================= */
-
-        .bounce-text span:nth-child(1)  {
-            animation-delay: 0s, 1.60s;
-        }
-
-        .bounce-text span:nth-child(2)  {
-            animation-delay: 0.08s, 1.64s;
-        }
-
-        .bounce-text span:nth-child(3)  {
-            animation-delay: 0.16s, 1.68s;
-        }
-
-        .bounce-text span:nth-child(4)  {
-            animation-delay: 0.24s, 1.72s;
-        }
-
-        .bounce-text span:nth-child(5)  {
-            animation-delay: 0.32s, 1.76s;
-        }
-
-        .bounce-text span:nth-child(6)  {
-            animation-delay: 0.40s, 1.80s;
-        }
-
-        .bounce-text span:nth-child(7)  {
-            animation-delay: 0.48s, 1.84s;
-        }
-
-        .bounce-text span:nth-child(8)  {
-            animation-delay: 0.56s, 1.88s;
-        }
-
-        .bounce-text span:nth-child(9)  {
-            animation-delay: 0.64s, 1.92s;
-        }
-
-        .bounce-text span:nth-child(10) {
-            animation-delay: 0.72s, 1.96s;
-        }
-
-        .bounce-text span:nth-child(11) {
-            animation-delay: 0.80s, 2.00s;
-        }
-
-        .bounce-text span:nth-child(12) {
-            animation-delay: 0.88s, 2.04s;
-        }
-
-        .bounce-text span:nth-child(13) {
-            animation-delay: 0.96s, 2.08s;
-        }
-
-        .bounce-text span:nth-child(14) {
-            animation-delay: 1.04s, 2.12s;
-        }
-
-        .bounce-text span:nth-child(15) {
-            animation-delay: 1.12s, 2.16s;
-        }
-
-        /* =========================
-           INTRO
-           ========================= */
-
-        @keyframes slideIn {
-
-            from {
+            0% {
                 opacity: 0;
-                transform: translateX(80px);
+
+                transform:
+                    translateY(-80px)
+                    scale(0.75)
+                    rotate(-16deg);
             }
 
-            to {
+            55% {
                 opacity: 1;
-                transform: translateX(0);
+
+                transform:
+                    translateY(10px)
+                    scale(1.05)
+                    rotate(2deg);
             }
 
-        }
+            75% {
+                transform:
+                    translateY(-5px)
+                    scale(0.98)
+                    rotate(-1deg);
+            }
 
-        /* =========================
-           BOUNCE
-           ========================= */
-
-        @keyframes letterBounce {
-
-            0%,
-            10%,
             100% {
-                transform: translateY(0);
-            }
+                opacity: 1;
 
-            4% {
-                transform: translateY(-14px);
-            }
-
-            7% {
-                transform: translateY(0);
+                transform:
+                    translateY(0)
+                    scale(1)
+                    rotate(0);
             }
 
         }
@@ -225,10 +238,208 @@
             }
 
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-12px);
             }
 
             100% {
+                transform: translateY(0);
+            }
+
+        }
+
+        /* =========================
+           TEXT
+           ========================= */
+
+        .coming-soon h1 {
+            font-size: 60px;
+            font-weight: 700;
+
+            line-height: 1.2;
+
+            margin: 0;
+        }
+
+        .bounce-text {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            flex-wrap: wrap;
+        }
+
+        .letter {
+            display: inline-block;
+
+            opacity: 0;
+
+            transform:
+                translateX(80px)
+                rotate(40deg);
+
+            animation:
+                slideIn
+                0.6s
+                cubic-bezier(0.22, 1, 0.36, 1)
+                forwards;
+        }
+
+        .letter-inner {
+            display: inline-block;
+
+            animation:
+                letterBounce
+                5s
+                ease-in-out
+                infinite;
+        }
+
+        /* =========================
+           TEXT INTRO DELAY
+           ========================= */
+
+        .letter:nth-child(1) {
+            animation-delay: 3.2s;
+        }
+
+        .letter:nth-child(2) {
+            animation-delay: 3.28s;
+        }
+
+        .letter:nth-child(3) {
+            animation-delay: 3.36s;
+        }
+
+        .letter:nth-child(4) {
+            animation-delay: 3.44s;
+        }
+
+        .letter:nth-child(5) {
+            animation-delay: 3.52s;
+        }
+
+        .letter:nth-child(6) {
+            animation-delay: 3.60s;
+        }
+
+        .letter:nth-child(7) {
+            animation-delay: 3.68s;
+        }
+
+        .letter:nth-child(8) {
+            animation-delay: 3.76s;
+        }
+
+        .letter:nth-child(9) {
+            animation-delay: 3.84s;
+        }
+
+        .letter:nth-child(10) {
+            animation-delay: 3.92s;
+        }
+
+        .letter:nth-child(11) {
+            animation-delay: 4.00s;
+        }
+
+        /* =========================
+           BOUNCE DELAY
+           ========================= */
+
+        .letter:nth-child(1) .letter-inner {
+            animation-delay: 4.80s;
+        }
+
+        .letter:nth-child(2) .letter-inner {
+            animation-delay: 4.84s;
+        }
+
+        .letter:nth-child(3) .letter-inner {
+            animation-delay: 4.88s;
+        }
+
+        .letter:nth-child(4) .letter-inner {
+            animation-delay: 4.92s;
+        }
+
+        .letter:nth-child(5) .letter-inner {
+            animation-delay: 4.96s;
+        }
+
+        .letter:nth-child(6) .letter-inner {
+            animation-delay: 5.00s;
+        }
+
+        .letter:nth-child(7) .letter-inner {
+            animation-delay: 5.04s;
+        }
+
+        .letter:nth-child(8) .letter-inner {
+            animation-delay: 5.08s;
+        }
+
+        .letter:nth-child(9) .letter-inner {
+            animation-delay: 5.12s;
+        }
+
+        .letter:nth-child(10) .letter-inner {
+            animation-delay: 5.16s;
+        }
+
+        .letter:nth-child(11) .letter-inner {
+            animation-delay: 5.20s;
+        }
+
+        /* =========================
+           SLIDE IN
+           ========================= */
+
+        @keyframes slideIn {
+
+            0% {
+                opacity: 0;
+
+                transform:
+                    translateX(80px)
+                    rotate(40deg);
+            }
+
+            70% {
+                opacity: 1;
+
+                transform:
+                    translateX(-5px)
+                    rotate(-3deg);
+            }
+
+            100% {
+                opacity: 1;
+
+                transform:
+                    translateX(0)
+                    rotate(0);
+            }
+
+        }
+
+        /* =========================
+           LETTER BOUNCE
+           ========================= */
+
+        @keyframes letterBounce {
+
+            0%,
+            10%,
+            100% {
+                transform: translateY(0);
+            }
+
+            4% {
+                transform: translateY(-14px);
+            }
+
+            7% {
                 transform: translateY(0);
             }
 
@@ -256,6 +467,13 @@
                 font-size: 40px;
             }
 
+            .spinner {
+                width: 45px;
+                height: 45px;
+
+                border-width: 4px;
+            }
+
         }
 
         /* =========================
@@ -264,12 +482,26 @@
 
         @media (prefers-reduced-motion: reduce) {
 
+            .loader {
+                display: none;
+            }
+
             .logo-wrap {
+                opacity: 1;
                 animation: none;
             }
 
-            .bounce-text span {
+            .logo-float {
+                animation: none;
+            }
+
+            .letter {
                 opacity: 1;
+                transform: none;
+                animation: none;
+            }
+
+            .letter-inner {
                 animation: none;
             }
 
@@ -279,34 +511,153 @@
 
 <body>
 
-    <main class="coming-soon">
+    <!-- =========================
+         LOADING SCREEN
+         ========================= -->
 
-        <div class="logo-wrap">
-            <img
-                src="assets/logo.png"
-                alt="พรรคสังคมใหม่"
-            >
+    <div class="loader" id="loader">
+
+        <div class="spinner-animation" id="spinnerAnimation">
+
+            <div class="spinner"></div>
+
         </div>
 
+    </div>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main class="coming-soon">
+
+        <!-- LOGO -->
+
+        <div class="logo-wrap">
+
+            <div class="logo-float">
+
+                <img
+                    src="assets/logo.png"
+                    alt="พรรคสังคมใหม่"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- TEXT -->
+
         <h1 class="bounce-text">
-            <span>พ</span>
-            <span>บ</span>
-            <span>กั</span>
-            <span>น</span>
 
-            <span>เ</span>
-            <span>ร็</span>
-            <span>ว</span>
-            <span>ๆ</span>
+            <span class="letter">
+                <span class="letter-inner">พ</span>
+            </span>
 
-            <span>&nbsp;</span>
+            <span class="letter">
+                <span class="letter-inner">บ</span>
+            </span>
 
-            <span>นี้</span>
+            <span class="letter">
+                <span class="letter-inner">กั</span>
+            </span>
 
-            <span>!</span>
+            <span class="letter">
+                <span class="letter-inner">น</span>
+            </span>
+
+            <span class="letter">
+                <span class="letter-inner">เ</span>
+            </span>
+
+            <span class="letter">
+                <span class="letter-inner">ร็</span>
+            </span>
+
+            <span class="letter">
+                <span class="letter-inner">ว</span>
+            </span>
+
+            <span class="letter">
+                <span class="letter-inner">ๆ</span>
+            </span>
+
+            <span class="letter">
+                <span class="letter-inner">&nbsp;</span>
+            </span>
+
+            <span class="letter">
+                <span class="letter-inner">นี้</span>
+            </span>
+
+            <span class="letter">
+                <span class="letter-inner">!</span>
+            </span>
+
         </h1>
 
     </main>
+
+
+    <!-- =========================
+         SCRIPT
+         ========================= -->
+
+    <script>
+
+        window.addEventListener("load", function () {
+
+            const loader = document.getElementById("loader");
+            const spinnerAnimation =
+                document.getElementById("spinnerAnimation");
+
+            /*
+             * 0.0s
+             * หน้า Loading ปรากฏ
+             * Spinner ยังไม่ปรากฏ
+             */
+
+            setTimeout(function () {
+
+                /*
+                 * 0.5s
+                 * Spinner ค่อย ๆ ปรากฏ
+                 */
+
+                spinnerAnimation.classList.add("show");
+
+            }, 0);
+
+
+            /*
+             * 2.5s
+             * Spinner หายไป
+             */
+
+            setTimeout(function () {
+
+                spinnerAnimation.classList.remove("show");
+                spinnerAnimation.classList.add("hide");
+
+            }, 2500);
+
+
+            /*
+             * 3.2s
+             * Loading Screen หาย
+             */
+
+            setTimeout(function () {
+
+                loader.classList.add("hide");
+
+            }, 3000);
+
+        });
+
+    </script>
 
 </body>
 </html>
