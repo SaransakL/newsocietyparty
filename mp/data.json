@@ -1,0 +1,52 @@
+[
+    {
+        "firstName": "จุลพันธ์",
+        "lastName": "อมรพิทักษ์",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "ฐิติกร",
+        "lastName": "ฉายไฟสว่างตา",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "ธนกิจ",
+        "lastName": "รุ่งเจริญ",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "ธนากร",
+        "lastName": "รัตนภาคิน",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "ธนาธาร",
+        "lastName": "วัฒนไพศาล",
+        "image": "/assets/member/ธนาธาร.png"
+    },
+    {
+        "firstName": "ธะนันนพพะสอน",
+        "lastName": "",
+        "image": "/assets/member/ธะนันนพพะสอน.png"
+    },
+    {
+        "firstName": "ธีร์จุฑาวุฒิ",
+        "lastName": "หิรัญดิษฐ์",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "พิทักษ์",
+        "lastName": "ราชวัตน์",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "สัพพัญญู",
+        "lastName": "รู้ทุกเรื่อง",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "อัคนี",
+        "lastName": "นิลวารี",
+        "image": "/assets/member/profile-placehold.png"
+    }
+]
