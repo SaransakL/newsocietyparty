@@ -1,0 +1,62 @@
+[
+    {
+        "firstName": "ธะนันนพพะสอน",
+        "lastName": "",
+        "position": "หัวหน้าพรรค",
+        "image": "/assets/member/ธะนันนพพะสอน.png"
+    },
+    {
+        "firstName": "จุลพันธ์",
+        "lastName": "อมรพิทักษ์",
+        "position": "รองหัวหน้าพรรค",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "ธนาธาร",
+        "lastName": "วัฒนไพศาล",
+        "position": "รองหัวหน้าพรรค",
+        "image": "/assets/member/ธนาธาร.png"
+    },
+    {
+        "firstName": "",
+        "lastName": "",
+        "position": "เลขาธิการพรรค",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "",
+        "lastName": "",
+        "position": "รองเลขาธิการพรรค",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "",
+        "lastName": "",
+        "position": "โฆษกพรรค",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "",
+        "lastName": "",
+        "position": "รองโฆษกพรรค",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "",
+        "lastName": "",
+        "position": "กรรมการบริหารพรรค",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "",
+        "lastName": "",
+        "position": "กรรมการบริหารพรรค",
+        "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "",
+        "lastName": "",
+        "position": "กรรมการบริหารพรรค",
+        "image": "/assets/member/profile-placehold.png"
+    }
+]
