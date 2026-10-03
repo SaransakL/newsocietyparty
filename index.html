@@ -1,685 +1,72 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="พรรคสังคมใหม่ - New Society Party">
+    <meta name="theme-color" content="#01ff00">
+
+    <meta property="og:title" content="หน้าแรก - พรรคสังคมใหม่">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://newsocietyparty.vercel.app/">
     <meta property="og:image" content="https://newsocietyparty.vercel.app/assets/thumbnail.png">
-    <meta property="og:site_name" content="พรรคสังคมใหม่ - New Society Party">
+    <meta property="og:site_name" content="พรรคสังคมใหม่">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="พรรคสังคมใหม่ - New Society Party">
+    <meta name="twitter:title" content="หน้าแรก - พรรคสังคมใหม่">
     <meta name="twitter:image" content="https://newsocietyparty.vercel.app/assets/thumbnail.png">
 
-    <title>พรรคสังคมใหม่ - New Society Party</title>
+    <title>หน้าแรก - พรรคสังคมใหม่</title>
 
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/png">
 
-    <style>
-        @font-face {
-            font-family: 'Hinnual';
-            src: url('assets/typeface/Hinnual/Hinnual_Light.woff2') format('woff2');
-            font-weight: 100;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Hinnual';
-            src: url('assets/typeface/Hinnual/Hinnual_Regular.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Hinnual';
-            src: url('assets/typeface/Hinnual/Hinnual_Bold.woff2') format('woff2');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Hinnual';
-            src: url('assets/typeface/Hinnual/Hinnual_Black.woff2') format('woff2');
-            font-weight: 900;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
-        }
-
-        body {
-            min-height: 100vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: #01ff00;
-            color: #000;
-
-            font-family: "Hinnual", sans-serif;
-
-            overflow: hidden;
-        }
-
-        /* =========================
-           LOADING SCREEN
-           ========================= */
-
-        .loader {
-            position: fixed;
-            inset: 0;
-
-            z-index: 9999;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: #01ff00;
-
-            opacity: 1;
-            visibility: visible;
-
-            transition:
-                opacity 0.7s ease,
-                visibility 0.7s ease;
-        }
-
-        .loader.hide {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        /* =========================
-           SPINNER
-           ========================= */
-
-        .spinner-animation {
-            opacity: 0;
-
-            transform: scale(0.5);
-
-            transition:
-                opacity 0.4s ease,
-                transform 0.4s ease;
-        }
-
-        .spinner-animation.show {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .spinner-animation.hide {
-            opacity: 0;
-            transform: scale(0.5);
-        }
-
-        .spinner {
-            width: 55px;
-            height: 55px;
-
-            border: 10px solid rgba(0, 0, 0, 0.1);
-            border-top-color: #000;
-
-            border-radius: 100%;
-
-            animation:
-                spinnerRotate 0.5s linear infinite;
-        }
-
-        @keyframes spinnerRotate {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* =========================
-           MAIN
-           ========================= */
-
-        .coming-soon {
-            width: 100%;
-            max-width: 900px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-        }
-
-        /* =========================
-           LOGO
-           ========================= */
-
-        .logo-wrap {
-            margin-bottom: 35px;
-
-            opacity: 0;
-
-            animation:
-                logoEnter
-                0.9s
-                cubic-bezier(0.22, 1, 0.36, 1)
-                3.2s
-                forwards;
-        }
-
-        .logo-float {
-            animation:
-                float
-                5s
-                ease-in-out
-                4.1s
-                infinite;
-        }
-
-        .logo-wrap img {
-            height: 160px;
-            width: auto;
-
-            display: block;
-
-            transition:
-                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .logo-wrap:hover .logo-float {
-            animation-play-state: paused;
-        }
-
-        .logo-wrap:hover img {
-            transform:
-                scale(1.1)
-                rotate(-2deg);
-        }
-
-        /* =========================
-           LOGO INTRO
-           ========================= */
-
-        @keyframes logoEnter {
-
-            0% {
-                opacity: 0;
-
-                transform:
-                    translateY(-80px)
-                    scale(0.75)
-                    rotate(-16deg);
-            }
-
-            55% {
-                opacity: 1;
-
-                transform:
-                    translateY(10px)
-                    scale(1.05)
-                    rotate(2deg);
-            }
-
-            75% {
-                transform:
-                    translateY(-5px)
-                    scale(0.98)
-                    rotate(-1deg);
-            }
-
-            100% {
-                opacity: 1;
-
-                transform:
-                    translateY(0)
-                    scale(1)
-                    rotate(0);
-            }
-
-        }
-
-        /* =========================
-           LOGO FLOAT
-           ========================= */
-
-        @keyframes float {
-
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-
-        }
-
-        /* =========================
-           TEXT
-           ========================= */
-
-        .coming-soon h1 {
-            font-size: 60px;
-            font-weight: 400;
-
-            line-height: 1.2;
-
-            margin: 0;
-        }
-
-        .bounce-text {
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            flex-wrap: wrap;
-        }
-
-        .letter {
-            display: inline-block;
-
-            opacity: 0;
-
-            transform:
-                translateX(80px)
-                rotate(40deg);
-
-            animation:
-                slideIn
-                0.6s
-                cubic-bezier(0.22, 1, 0.36, 1)
-                forwards;
-        }
-
-        .letter-inner {
-            display: inline-block;
-
-            animation:
-                letterBounce
-                5s
-                ease-in-out
-                infinite;
-        }
-
-        /* =========================
-           TEXT INTRO DELAY
-           ========================= */
-
-        .letter:nth-child(1) {
-            animation-delay: 3.2s;
-        }
-
-        .letter:nth-child(2) {
-            animation-delay: 3.28s;
-        }
-
-        .letter:nth-child(3) {
-            animation-delay: 3.36s;
-        }
-
-        .letter:nth-child(4) {
-            animation-delay: 3.44s;
-        }
-
-        .letter:nth-child(5) {
-            animation-delay: 3.52s;
-        }
-
-        .letter:nth-child(6) {
-            animation-delay: 3.60s;
-        }
-
-        .letter:nth-child(7) {
-            animation-delay: 3.68s;
-        }
-
-        .letter:nth-child(8) {
-            animation-delay: 3.76s;
-        }
-
-        .letter:nth-child(9) {
-            animation-delay: 3.84s;
-        }
-
-        .letter:nth-child(10) {
-            animation-delay: 3.92s;
-        }
-
-        .letter:nth-child(11) {
-            animation-delay: 4.00s;
-        }
-
-        /* =========================
-           BOUNCE DELAY
-           ========================= */
-
-        .letter:nth-child(1) .letter-inner {
-            animation-delay: 4.80s;
-        }
-
-        .letter:nth-child(2) .letter-inner {
-            animation-delay: 4.84s;
-        }
-
-        .letter:nth-child(3) .letter-inner {
-            animation-delay: 4.88s;
-        }
-
-        .letter:nth-child(4) .letter-inner {
-            animation-delay: 4.92s;
-        }
-
-        .letter:nth-child(5) .letter-inner {
-            animation-delay: 4.96s;
-        }
-
-        .letter:nth-child(6) .letter-inner {
-            animation-delay: 5.00s;
-        }
-
-        .letter:nth-child(7) .letter-inner {
-            animation-delay: 5.04s;
-        }
-
-        .letter:nth-child(8) .letter-inner {
-            animation-delay: 5.08s;
-        }
-
-        .letter:nth-child(9) .letter-inner {
-            animation-delay: 5.12s;
-        }
-
-        .letter:nth-child(10) .letter-inner {
-            animation-delay: 5.16s;
-        }
-
-        .letter:nth-child(11) .letter-inner {
-            animation-delay: 5.20s;
-        }
-
-        /* =========================
-           SLIDE IN
-           ========================= */
-
-        @keyframes slideIn {
-
-            0% {
-                opacity: 0;
-
-                transform:
-                    translateX(80px)
-                    rotate(40deg);
-            }
-
-            70% {
-                opacity: 1;
-
-                transform:
-                    translateX(-5px)
-                    rotate(-3deg);
-            }
-
-            100% {
-                opacity: 1;
-
-                transform:
-                    translateX(0)
-                    rotate(0);
-            }
-
-        }
-
-        /* =========================
-           LETTER BOUNCE
-           ========================= */
-
-        @keyframes letterBounce {
-
-            0%,
-            10%,
-            100% {
-                transform: translateY(0);
-            }
-
-            4% {
-                transform: translateY(-14px);
-            }
-
-            7% {
-                transform: translateY(0);
-            }
-
-        }
-
-        /* =========================
-           MOBILE
-           ========================= */
-
-        @media (max-width: 576px) {
-
-            .coming-soon {
-                padding: 30px 20px;
-            }
-
-            .logo-wrap {
-                margin-bottom: 28px;
-            }
-
-            .logo-wrap img {
-                height: 80px;
-            }
-
-            .coming-soon h1 {
-                font-size: 40px;
-            }
-
-        }
-
-        /* =========================
-           REDUCED MOTION
-           ========================= */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .loader {
-                display: none;
-            }
-
-            .logo-wrap {
-                opacity: 1;
-                animation: none;
-            }
-
-            .logo-float {
-                animation: none;
-            }
-
-            .letter {
-                opacity: 1;
-                transform: none;
-                animation: none;
-            }
-
-            .letter-inner {
-                animation: none;
-            }
-
-        }
-    </style>
+    <script src="/script.js"></script>
 </head>
 
 <body>
 
-    <!-- =========================
-         LOADING SCREEN
-         ========================= -->
+    <header id="header"></header>
 
-    <div class="loader" id="loader">
+    <div class="slider">
 
-        <div class="spinner-animation" id="spinnerAnimation">
+        <div class="slides" style="transform: translateX(0%);">
 
-            <div class="spinner"></div>
+            <a href="/faq/register.html" class="slide">
+                <img src="/assets/register.png">
+            </a>
 
         </div>
+
+        <div class="prev">
+            <i class="bi bi-chevron-left"></i>
+        </div>
+
+        <div class="next">
+            <i class="bi bi-chevron-right"></i>
+        </div>
+
+        <div class="dots"></div>
 
     </div>
 
+    <main>
 
-    <!-- =========================
-         MAIN CONTENT
-         ========================= -->
+        <section class="news">
 
-    <main class="coming-soon">
-
-        <!-- LOGO -->
-
-        <div class="logo-wrap">
-
-            <div class="logo-float">
-
-                <img
-                    src="assets/logo.svg"
-                    alt="พรรคสังคมใหม่"
-                >
-
+            <div class="section-header">
+                <h1>ข่าวสารล่าสุด</h1>
+                
+                <a href="/news/">ดูทั้งหมด</a>
             </div>
 
-        </div>
+            <div class="news-grid" id="latestNews"></div>
 
-
-        <!-- TEXT -->
-
-        <h1 class="bounce-text">
-
-            <span class="letter">
-                <span class="letter-inner">พ</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">บ</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">กั</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">น</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">เ</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">ร็</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">ว</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">ๆ</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">&nbsp;</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">นี้</span>
-            </span>
-
-            <span class="letter">
-                <span class="letter-inner">!</span>
-            </span>
-
-        </h1>
+        </section>
 
     </main>
 
-
-    <!-- =========================
-         SCRIPT
-         ========================= -->
-
-    <script>
-
-        window.addEventListener("load", function () {
-
-            const loader = document.getElementById("loader");
-            const spinnerAnimation =
-                document.getElementById("spinnerAnimation");
-
-            /*
-             * 0.0s
-             * หน้า Loading ปรากฏ
-             * Spinner ยังไม่ปรากฏ
-             */
-
-            setTimeout(function () {
-
-                /*
-                 * 0.5s
-                 * Spinner ค่อย ๆ ปรากฏ
-                 */
-
-                spinnerAnimation.classList.add("show");
-
-            }, 0);
-
-
-            /*
-             * 2.5s
-             * Spinner หายไป
-             */
-
-            setTimeout(function () {
-
-                spinnerAnimation.classList.remove("show");
-                spinnerAnimation.classList.add("hide");
-
-            }, 2500);
-
-
-            /*
-             * 3.2s
-             * Loading Screen หาย
-             */
-
-            setTimeout(function () {
-
-                loader.classList.add("hide");
-
-            }, 3000);
-
-        });
-
-    </script>
+    <footer id="footer"></footer>
 
 </body>
 </html>

@@ -1,0 +1,58 @@
+<a class="logo" href="/" aria-label="หน้าหลัก">
+    <img src="/assets/logo.svg" alt="พรรคสังคมใหม่">
+</a>
+
+<nav>
+
+    <a href="/">หน้าแรก</a>
+    <a href="/news/">ข่าวสาร</a>
+    <a href="/policy/">นโยบาย</a>
+    <a href="/mp/">ส.ส. พรรค</a>
+
+    <div class="dropdown">
+        <a class="dropdown-toggle">
+            เกี่ยวกับพรรค
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="/about/history.html">ประวัติความเป็นมา</a>
+            <a href="/about/">อุดมการณ์ของพรรค</a>
+            <a href="/about/board.html">ผู้บริหารพรรค</a>
+        </div>
+    </div>
+
+</nav>
+
+<div class="menu-btn bi bi-list" onclick="toggleMenu()"></div>
+
+<div class="offcanvas" id="offcanvas">
+
+    <!-- หน้าหลัก -->
+    <div class="offcanvas-page main-page">
+
+        <div class="close-btn bi bi-x-lg" onclick="toggleMenu()"></div>
+    
+        <a href="/">หน้าแรก</a>
+        <a href="/news/">ข่าวสาร</a>
+        <a href="/policy/">นโยบาย</a>
+        <a href="/mp/">ส.ส. พรรค</a>
+
+        <a onclick="openSubmenu(event, 'about')">
+            เกี่ยวกับพรรค
+        </a>
+
+    </div>
+
+    <div class="offcanvas-page submenu-page" id="about">
+
+        <div class="back-btn" onclick="closeSubmenu()">
+            <i class="bi bi-arrow-left"></i>
+        </div>
+
+        <a href="/about/history.html">ประวัติความเป็นมา</a>
+        <a href="/about/">อุดมการณ์ของพรรค</a>
+        <a href="/about/board.html">ผู้บริหารพรรค</a>
+
+    </div>
+
+</div>
