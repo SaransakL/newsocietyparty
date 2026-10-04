@@ -2,12 +2,7 @@
     {
         "firstName": "จุลพันธ์",
         "lastName": "อมรพิทักษ์",
-        "image": "/assets/member/profile-placehold.png"
-    },
-    {
-        "firstName": "ฐิติกร",
-        "lastName": "ฉายไฟสว่างตา",
-        "image": "/assets/member/profile-placehold.png"
+        "image": "/assets/member/จุลพันธ์.png"
     },
     {
         "firstName": "ธนกิจ",
@@ -30,14 +25,24 @@
         "image": "/assets/member/ธะนันนพพะสอน.png"
     },
     {
+        "firstName": "ธีรภัทร",
+        "lastName": "เจิมจรัส",
+        "image": "/assets/member/ธีรภัทร.png"
+    },
+    {
         "firstName": "ธีร์จุฑาวุฒิ",
         "lastName": "หิรัญดิษฐ์",
-        "image": "/assets/member/profile-placehold.png"
+        "image": "/assets/member/ธีร์จุฑาวุฒิ.png"
     },
     {
         "firstName": "พิทักษ์",
         "lastName": "ราชวัตน์",
         "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "รังสิมันต์",
+        "lastName": "ร่วงลงหลุม",
+        "image": "/assets/member/รังสิมันต์.png"
     },
     {
         "firstName": "สัพพัญญู",
