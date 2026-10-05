@@ -6,12 +6,12 @@
     },
     {
         "firstName": "ธนกิจ",
-        "lastName": "รุ่งเจริญ",
+        "lastName": "รุ่งเจริญ [Inactive]",
         "image": "/assets/member/profile-placehold.png"
     },
     {
         "firstName": "ธนากร",
-        "lastName": "รัตนภาคิน",
+        "lastName": "รัตนภาคิน [Inactive]",
         "image": "/assets/member/profile-placehold.png"
     },
     {
@@ -36,7 +36,7 @@
     },
     {
         "firstName": "พิทักษ์",
-        "lastName": "ราชวัตน์",
+        "lastName": "ราชวัตน์ [Inactive]",
         "image": "/assets/member/profile-placehold.png"
     },
     {
@@ -45,13 +45,18 @@
         "image": "/assets/member/รังสิมันต์.png"
     },
     {
+        "firstName": "สุชาดา",
+        "lastName": "ไม่มีทรัพย์",
+        "image": "/assets/member/สุชาดา.png"
+    },
+    {
         "firstName": "สัพพัญญู",
-        "lastName": "รู้ทุกเรื่อง",
+        "lastName": "รู้ทุกเรื่อง [Inactive]",
         "image": "/assets/member/profile-placehold.png"
     },
     {
         "firstName": "อัคนี",
-        "lastName": "นิลวารี",
+        "lastName": "นิลวารี [Inactive]",
         "image": "/assets/member/profile-placehold.png"
     }
 ]
