@@ -1,5 +1,10 @@
 [
     {
+        "firstName": "กมลา",
+        "lastName": "สุริวัฒณา",
+        "image": "/assets/member/กมลา.png"
+    },
+    {
         "firstName": "จุลพันธ์",
         "lastName": "อมรพิทักษ์",
         "image": "/assets/member/จุลพันธ์.png"
@@ -43,6 +48,11 @@
         "firstName": "รังสิมันต์",
         "lastName": "ร่วงลงหลุม",
         "image": "/assets/member/รังสิมันต์.png"
+    },
+    {
+        "firstName": "รัตนเศรษฐ",
+        "lastName": "ชิดขวา",
+        "image": "/assets/member/รัตนเศรษฐ.png"
     },
     {
         "firstName": "สุชาดา",
