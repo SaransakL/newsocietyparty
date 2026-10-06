@@ -24,39 +24,9 @@
         "image": "/assets/member/สุชาดา.png"
     },
     {
-        "firstName": "",
-        "lastName": "",
-        "position": "รองเลขาธิการพรรค",
-        "image": "/assets/member/profile-placehold.png"
-    },
-    {
-        "firstName": "",
-        "lastName": "",
+         "firstName": "รังสิมันต์",
+        "lastName": "ร่วงลงหลุม",
         "position": "โฆษกพรรค",
-        "image": "/assets/member/profile-placehold.png"
-    },
-    {
-        "firstName": "",
-        "lastName": "",
-        "position": "รองโฆษกพรรค",
-        "image": "/assets/member/profile-placehold.png"
-    },
-    {
-        "firstName": "",
-        "lastName": "",
-        "position": "กรรมการบริหารพรรค",
-        "image": "/assets/member/profile-placehold.png"
-    },
-    {
-        "firstName": "",
-        "lastName": "",
-        "position": "กรรมการบริหารพรรค",
-        "image": "/assets/member/profile-placehold.png"
-    },
-    {
-        "firstName": "",
-        "lastName": "",
-        "position": "กรรมการบริหารพรรค",
-        "image": "/assets/member/profile-placehold.png"
+        "image": "/assets/member/รังสิมันต์.png"
     }
 ]
