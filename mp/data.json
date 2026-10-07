@@ -16,8 +16,8 @@
     },
     {
         "firstName": "ธนากร",
-        "lastName": "รัตนภาคิน [Inactive]",
-        "image": "/assets/member/profile-placehold.png"
+        "lastName": "รัตนภาคิน",
+        "image": "/assets/member/ธนากร.png"
     },
     {
         "firstName": "ธนาธาร",
@@ -55,14 +55,19 @@
         "image": "/assets/member/รัตนเศรษฐ.png"
     },
     {
-        "firstName": "สุชาดา",
-        "lastName": "ไม่มีทรัพย์",
-        "image": "/assets/member/สุชาดา.png"
+        "firstName": "วีรภัทร",
+        "lastName": "งามสวัสดิ์",
+        "image": "/assets/member/วีรภัทร.png"
     },
     {
         "firstName": "สัพพัญญู",
         "lastName": "รู้ทุกเรื่อง [Inactive]",
         "image": "/assets/member/profile-placehold.png"
+    },
+    {
+        "firstName": "สุชาดา",
+        "lastName": "ไม่มีทรัพย์",
+        "image": "/assets/member/สุชาดา.png"
     },
     {
         "firstName": "อัคนี",
