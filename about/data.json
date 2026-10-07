@@ -18,9 +18,15 @@
         "image": "/assets/member/ธนาธาร.png"
     },
     {
+        "firstName": "กมลา",
+        "lastName": "สุริวัฒณา",
+        "position": "เลขาธิการพรรค",
+        "image": "/assets/member/กมลา.png"
+    },
+    {
         "firstName": "สุชาดา",
         "lastName": "ไม่มีทรัพย์",
-        "position": "เลขาธิการพรรค",
+        "position": "รองเลขาธิการพรรค",
         "image": "/assets/member/สุชาดา.png"
     },
     {
