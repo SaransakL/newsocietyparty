@@ -1,0 +1,192 @@
+
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+    ::selection {
+        background-color: #01ff00;
+        color: #000;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        color: var(--black);
+        background-color: var(--white);
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    #hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 80px;
+        min-height: 100vh;
+    }
+
+    #hero .left {
+        flex: 1;
+    }
+
+    #hero .right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    #hero .left h1 {
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin: 0;
+        max-width: 650px;
+    }
+
+    #hero .left img {
+        height: 100px;
+        vertical-align: top;
+    }
+
+    #hero .right img {
+        width: 100%;
+        max-width: 480px;
+    }
+
+    #hero p {
+        opacity: 0.6;
+        font-size: 18px;
+        line-height: 1.8;
+        max-width: 560px;
+        margin: 28px 0;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 16px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .btn.primary,
+    .btn.secondary:hover {
+        background: var(--primary);
+        color: var(--white);
+        border: 2px solid var(--primary);
+    }
+
+    .btn.secondary {
+        border: 2px solid var(--primary);
+        color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+
+        main {
+            padding: 0 20px;
+        }
+
+        #hero {
+            flex-direction: column-reverse;
+            justify-content: center;
+            text-align: center;
+            gap: 40px;
+            min-height: auto;
+            padding: 60px 0;
+        }
+
+        #hero .left,
+        #hero .right {
+            width: 100%;
+        }
+
+        #hero .left h1 {
+            font-size: 34px;
+            max-width: 100%;
+        }
+
+        #hero .left img {
+            height: 120px;
+        }
+
+        #hero p {
+            font-size: 16px;
+            margin: 20px auto 0;
+            max-width: 100%;
+        }
+
+        #hero .right img {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        main {
+            padding: 0 16px;
+        }
+
+        #hero {
+            padding: 40px 0;
+            gap: 28px;
+        }
+
+        #hero .left h1 {
+            font-size: 28px;
+        }
+
+        #hero .left img {
+            height: 50px;
+        }
+
+        #hero p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+    }
+    </style>
+</head>
+
+<body>
+
+<main>
+
+<section id="hero">
+    <div class="left">
+        <h1>
+            <img src="assets/logo-card.png" alt="logo">
+            <hr>
+            เว็บไซต์จะกลับมาเร็วๆ นี้
+        </h1>
+
+        <p>
+            ขออภัยในความไม่สะดวก ขณะนี้เว็บไซต์อยู่ระหว่างการปรับปรุง<br>เพื่อมอบประสบการณ์ที่ดียิ่งขึ้น และจะกลับมาให้บริการในเร็วๆ นี้
+        </p>
+    </div>
+
+    <div class="right">
+        <img src="/assets/maintenance.png" alt="maintenance">
+    </div>
+</section>
+
+</main>
+
+
+</body>
+
+</html>
