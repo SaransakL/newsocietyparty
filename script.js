@@ -1,4 +1,4 @@
-window.location="/maintenance.html";
+window.location.href="/maintenance.html";
 
 document.addEventListener("DOMContentLoaded", () => {
 
