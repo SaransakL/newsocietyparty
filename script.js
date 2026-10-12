@@ -1,3 +1,5 @@
+window.location="/maintenance.html";
+
 document.addEventListener("DOMContentLoaded", () => {
 
     // =====================================================
